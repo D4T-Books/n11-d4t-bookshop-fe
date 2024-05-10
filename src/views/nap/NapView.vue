@@ -8,10 +8,8 @@
 
   const router = useRouter();
 
-  // Các phương thức xử lý sự kiện khi nhấn nút "Nạp sồi"
   const onNpGiTextClick = () => {
-    // Điều hướng sang trang thanh toán
-    router.push("/payment"); // Thay đổi '/payment' bằng đường dẫn của trang thanh toán thực tế
+    router.push("/payment");
   };
 </script>
 
@@ -28,7 +26,7 @@
           class="absolute top-[6px] left-[-2px] w-full h-full object-cover [filter:blur(5px)]"
           loading="lazy"
           alt=""
-          src="../../src/assets/imgs/pngtree-acorns-on-the-ground-in-the-forest-image_2556793.jpg"
+          src="../../assets/imgs/pngtree-acorns-on-the-ground-in-the-forest-image_2556793.jpg"
         />
         <b
           class="absolute top-[0px] left-[0px] flex items-center w-[1440px] h-[285px] z-[1] mq450:text-lgi mq800:text-7xl"
