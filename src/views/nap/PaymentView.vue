@@ -1,8 +1,17 @@
-<!-- <script setup>
+<script setup>
   import HeaderAfterLogin from "@/components/default/HeaderAfterLogin.vue";
   import FooterApp from "@/components/default/FooterApp.vue";
-  import Kinhhoat from "@/components/nap/Kinhhoat.vue";
-  import Hinhthuc from "@/components/nap/Hinhthuc.vue";
+   import Kinhhoat from "@/components/Kinhhoat.vue";
+   import Hinhthuc from "@/components/Hinhthuc.vue";
+//   import { useRouter } from "vue-router";
+
+// const router = useRouter();
+
+// // Các phương thức xử lý sự kiện khi nhấn nút "Nạp sồi"
+// const onNpGiTextClick = () => {
+//   // Điều hướng sang trang thanh toán
+//   router.push("/payment"); // Thay đổi '/payment' bằng đường dẫn của trang thanh toán thực tế
+// };
 </script>
 <template>
   <HeaderAfterLogin></HeaderAfterLogin>
@@ -219,17 +228,5 @@
     font-size: inherit;
   }
 
-  /* Screens - no custom screen sizes defined */
-</style> -->
 
-<script setup>
-  import { ref } from "vue";
-</script>
-
-<template>
-  <h1>template</h1>
-</template>
-
-<style scoped>
-  /*  */
 </style>

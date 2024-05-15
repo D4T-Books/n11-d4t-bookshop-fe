@@ -3,7 +3,6 @@ import HomeView from "../views/HomeView.vue";
 import AdminDashboard from "../views/admin/AdminDashboard.vue";
 import { useConditionStore } from "../store/index.js";
 import NapView from "@/views/nap/NapView.vue";
-import PaymentView from "@/views/nap/PaymentView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

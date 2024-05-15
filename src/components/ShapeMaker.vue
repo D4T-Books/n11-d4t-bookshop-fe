@@ -1,39 +1,37 @@
 
 <template>
   <div
-    class="w-[250px] rounded-6xl bg-gainsboro-200 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] box-border overflow-hidden shrink-0 flex flex-col items-end justify-start pt-8 px-0 pb-[34px] gap-[26px] text-center text-lg text-black font-segoe-ui border-[1px] border-solid border-aquamarine"
+    class="w-[250px] rounded-6xl bg-gainsboro-200 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] box-border overflow-hidden shrink-0 flex flex-col items-start justify-start pt-[18px] px-0 pb-[34px] gap-[40px] text-center text-5xl text-black font-segoe-ui border-[1px] border-solid border-sandybrown mq450:gap-[20px]"
   >
     <div
-      class="w-[230px] h-[140px] flex flex-row items-start justify-end pt-[-5] pb-3.5 pr-2.5 pl-0 box-border text-5xl"
+      class="self-stretch flex flex-row items-start justify-start py-0 px-[15px]"
     >
-      <div
-        class="flex-1 flex flex-col items-start justify-start gap-[13px] pt-[-5]"
-        style="margin-top: -15px"
-      >
+      <div class="flex-1 flex flex-col items-start justify-start gap-[12px]">
         <div
-          class="self-stretch flex flex-row items-start justify-center py-[-10px] pr-[30px] pl-5"
+          class="flex flex-row items-start self-stretch justify-center px-5 py-0"
         >
           <img
             class="h-[70px] w-[70px] relative object-cover z-[1]"
+            loading="lazy"
             alt=""
             src="../../src/assets/imgs/bonussoi.png"
           />
         </div>
         <div
-          class="self-stretch flex flex-col items-start justify-start gap-[25px] pt-[-10px]"
-          style="margin-top: -10px"
+          class="self-stretch flex flex-col items-start justify-start gap-[15px]"
         >
-          <b class="self-stretch relative z-[1] mq450:text-lgi">{{
-            giHtSi79k
-          }}</b>
+          <b class="self-stretch relative z-[1]">
+            <p class="m-0">{{ giHtSi299k }}</p>
+            <p class="m-0 text-lg">Khuyến mãi nạp lần đầu</p>
+          </b>
           <div
-            class="self-stretch flex flex-row items-start justify-start py-0 px-[30px]"
+            class="self-stretch flex flex-row items-start justify-start py-0 px-[35px]"
           >
-            <div
-              class="cursor-pointer [border:none] py-0 px-[25px] bg-gainsboro-100 w-[150px] rounded-31xl flex flex-row items-end justify-start box-border z-[1]"
+            <button
+              class="cursor-pointer [border:none] py-0 px-[25px] bg-gainsboro-100 flex-1 rounded-31xl flex flex-row items-end justify-start z-[1]"
             >
               <b
-                class="w-[70px] relative text-base flex font-segoe-ui text-chocolate text-center items-center justify-center shrink-0 z-[2]"
+                class="w-[70px] relative text-base flex font-segoe-ui chocolate center items-center justify-center shrink-0 z-[2]"
                 >{{ prop }}</b
               >
               <img
@@ -41,51 +39,22 @@
                 alt=""
                 src="../../src/assets/imgs/bonussoi.png"
               />
-            </div>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="w-[250px] h-12 flex flex-col items-end justify-start gap-[23px]"
-    >
-      <div
-        class="self-stretch h-px relative box-border z-[1] border-t-[1px] border-solid border-gainsboro-100"
-      />
-      <div
-        class="w-[185px] h-6 flex flex-row items-start justify-end py-0 pr-[55px] pl-0 box-border"
-      >
-        <b
-          class="w-[130px] relative flex items-center justify-center shrink-0 z-[1]"
-          >{{ prop1 }}</b
-        >
-      </div>
     </div>
-    <div
-      class="w-[200px] h-10 flex flex-row items-start justify-end py-0 pr-[50px] pl-0 box-border"
-    >
-      <div
-        class="flex-1 rounded-31xl bg-gainsboro-100 flex flex-row items-start justify-start whitespace-nowrap z-[1]"
-      >
-        <div
-          class="h-10 w-[150px] relative rounded-31xl bg-gainsboro-100 hidden"
-        />
-        <b
-          class="h-10 flex-1 relative flex items-center justify-center cursor-pointer z-[2]"
-          @click="onNpGiTextClick"
-          >Nạp gói</b
-        >
-      </div>
-    </div>
-  </div>
-</template>
+  </template>
 <script setup>
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
-  giHtSi79k: String,
+  rectangle13: String,
+  giHtSi299k: String,
   prop: String,
   prop1: String,
+  prop2: String,
 });
 
 const router = useRouter();
@@ -94,7 +63,7 @@ const onNpGiTextClick = () => {
   router.push("/Nap/Payment");
 };
 </script>
-<style scoped>
+  <style scoped>
   /* Colors */
   .white {
     color: #fff;
@@ -106,7 +75,7 @@ const onNpGiTextClick = () => {
   .border-sandybrown {
     border-color: rgba(255, 199, 120, 0.75);
   }
-  .text-black {
+  .black {
     color: #000;
   }
 
@@ -146,11 +115,8 @@ const onNpGiTextClick = () => {
   .aquamarine {
     color: #8bf8c4;
   }
-  .border-aquamarine {
-    border-color: #8bf8c4;
-  }
 
-  .text-chocolate {
+  .chocolate {
     color: #c17011;
   }
 
@@ -167,7 +133,7 @@ const onNpGiTextClick = () => {
   }
 
   .border-gray-100 {
-    border-color: #898989;
+    border-color: #d9d9d9;
   }
   .gray-200 {
     color: rgba(0, 0, 0, 0.4);
