@@ -1,18 +1,16 @@
 <script setup>
   import HeaderAfterLogin from "@/components/default/HeaderAfterLogin.vue";
   import FooterApp from "@/components/default/FooterApp.vue";
-  import ShapeMaker from "@/components/ShapeMaker.vue";
-  import Frame1 from "@/components/Frame1.vue";
-  import Frame2 from "@/components/Frame2.vue";
+  import ShapeMaker from "@/components/nap/ShapeMaker.vue";
+  import Frame1 from "@/components/nap/Frame1.vue";
+  import Frame2 from "@/components/nap/Frame2.vue";
   import { useRouter } from "vue-router";
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  // Các phương thức xử lý sự kiện khi nhấn nút "Nạp sồi"
-  const onNpGiTextClick = () => {
-    // Điều hướng sang trang thanh toán
-    router.push("/payment"); // Thay đổi '/payment' bằng đường dẫn của trang thanh toán thực tế
-  };
+  // const onNpGiTextClick = () => {
+  //   router.push("/payment");
+  // };
 </script>
 
 <template>
