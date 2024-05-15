@@ -3,15 +3,7 @@
   import FooterApp from "@/components/default/FooterApp.vue";
    import Kinhhoat from "@/components/Kinhhoat.vue";
    import Hinhthuc from "@/components/Hinhthuc.vue";
-//   import { useRouter } from "vue-router";
 
-// const router = useRouter();
-
-// // Các phương thức xử lý sự kiện khi nhấn nút "Nạp sồi"
-// const onNpGiTextClick = () => {
-//   // Điều hướng sang trang thanh toán
-//   router.push("/payment"); // Thay đổi '/payment' bằng đường dẫn của trang thanh toán thực tế
-// };
 </script>
 <template>
     <HeaderAfterLogin></HeaderAfterLogin>
@@ -44,7 +36,7 @@
             </span>
           </b>
           <div
-            class="w-[1440px] h-px absolute !m-[0] top-[285px] left-[-2px] box-border z-[2] border-t-[1px] border-solid border-gray-100"
+            class="w-[100%] h-px absolute !m-[0] top-[285px] left-[-2px] box-border z-[2] border-t-[1px] border-solid border-gray-100"
           />
         </div>
       </div>
@@ -155,7 +147,6 @@ border-color: #898989;
   color: #efefef;
 }
 
-/* Spacing - no custom spacing defined */
 
 /* Font Family */
 .roboto {
@@ -228,6 +219,15 @@ border-color: #898989;
   font-size: inherit;
 }
 
-/* Screens - no custom screen sizes defined */
+@media screen and (max-width: 768px) {
+  .text-45xl {
+    font-size: 40px;
+  }
+  .text-13xl {
+    font-size: 24px;
+  }
+}
+
+/* Thay đổi kích thước của container cho màn hình nhỏ hơn */
 
 </style>

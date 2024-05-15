@@ -29,7 +29,7 @@
             <li class="p-4 cursor-pointer">Sách mới nhất</li>
             <li class="p-4 cursor-pointer">Hot</li>
             <li class="p-4 cursor-pointer">
-              <RouterLink to="/nap">Nạp sồi</RouterLink>
+              <RouterLink to="/Nap">Nạp sồi</RouterLink>
             </li>
             <li>
               <div class="flex flex-wrap gap-3 card justify-content-center">

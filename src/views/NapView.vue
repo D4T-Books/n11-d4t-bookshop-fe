@@ -31,7 +31,7 @@ const onNpGiTextClick = () => {
           src="../../src/assets/imgs/pngtree-acorns-on-the-ground-in-the-forest-image_2556793.jpg"
         />
         <b
-          class="absolute top-[0px] left-[0px] flex items-center w-[1440px] h-[285px] z-[1] mq450:text-lgi mq800:text-7xl"
+          class="absolute top-[0px] left-[0px] flex items-center w-[100%] h-[285px] z-[1] mq450:text-lgi mq800:text-7xl"
         >
           <span class="w-full">
             <p class="m-0 text-45xl md:text-6xl lg:text-7xl text-white whitespace-pre-wrap">  Gói sồi</p>
@@ -47,6 +47,7 @@ const onNpGiTextClick = () => {
     </div>
   </div>
   <section
+    
     class="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[63px] box-border gap-[26px] max-w-full text-left text-13xl text-black font-segoe-ui mq800:pb-[27px] mq800:box-border mq1350:pb-[41px] mq1350:box-border"
   >
     <h2

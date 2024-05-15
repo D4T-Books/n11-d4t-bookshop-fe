@@ -49,18 +49,15 @@
             </div>
           
   </template>
-  <script>
-    import { defineComponent } from "vue";
-  
-    export default defineComponent({
-      name: "Frame2",
-      methods:{
-        onNpGiTextClick(){
-            this.$router.push("/Nap/Payment");
-        },
-      },
-    });
-  </script>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const onNpGiTextClick = () => {
+  router.push("/Nap/Payment");
+};
+</script>
   <style scoped>
   /* Colors */
 .white {

@@ -6,13 +6,14 @@
         class="self-stretch flex flex-col items-end justify-start py-0 px-[27px] box-border gap-[10.1px] max-w-full text-left text-13xl text-black font-segoe-ui"
       >
       <div
-        class="mr-[0px] w-[1540px] h-px relative box-border max-w-[100%] shrink-0 border-t-[2px] border-solid border-gray-100"
+        class="mr-[0px] w-full h-px relative box-border max-w-[100%] shrink-0 border-t-[2px] border-solid border-gray-100"
       />
         <div
-          class="w-[1375px] flex flex-row items-start justify-start gap-[12px] max-w-full mq1350:flex-wrap"
+        style="padding: 20px;"
+          class="w-full flex flex-row items-start justify-start gap-[12px] max-w-full mq1350:flex-wrap"
         >
           <div
-            class="flex-1 flex flex-col items-start justify-start gap-[73px] min-w-[520px] max-w-full mq800:gap-[36px] mq800:min-w-full mq450:gap-[18px]" style="margin-left: -68px;"
+            class="flex-1 flex flex-col items-start justify-start gap-[73px] min-w-[520px] max-w-full mq800:gap-[36px] mq800:min-w-full mq450:gap-[18px]" 
           >
             <div
               class="w-[789px] flex flex-row items-start justify-start py-0 px-[5px] box-border max-w-full"
@@ -183,7 +184,7 @@
                 class="flex-1 bg-white box-border flex flex-col items-start justify-start pt-[21px] px-0 pb-[84px] relative gap-[19px] max-w-full text-left text-9xl border-[1px] border-solid border-cornsilk mq800:pt-5 mq800:pb-[55px] mq800:box-border"
               >
                 <div
-                  class="self-stretch h-[680px] relative bg-white box-border hidden z-[0] border-[1px] border-solid border-cornsilk"
+                  class="self-stretch h-[650px] relative bg-white box-border hidden z-[0] border-[1px] border-solid border-cornsilk"
                 />
                 <div
                   class="self-stretch flex flex-row items-start justify-start py-0 pr-[3px] pl-[7px] box-border max-w-full text-13xl"
@@ -281,69 +282,61 @@
     <!-- </div> -->
   </template>
   
-    <script>
-    import { defineComponent } from "vue";
-    import { useRoute } from "vue-router";
+  <script setup>
+  import { ref } from 'vue';
+  import { useRoute } from 'vue-router';
   
-  export default defineComponent({
-    name: "Hinhthuc",
-    data(){
-      return{
-        selectedOption: null,
-        selectedGoiHatSoi: null,
-        selectedPackageInfo: {
-      tenGoiHatSoi: "",
-      gia: "",
-      soi: ""
-    },
-      showDropdown: false,
-      packages: [
-        { id: 1, name: "Gói Hạt Sồi 79k", gia:"79.000 VNĐ", soi:"4.000 sồi"},
-        { id: 2, name: "Gói Hạt Sồi 99k", gia:"99.000 VNĐ", soi:"5.000 sồi" },
-        { id: 3, name: "Gói Hạt Sồi 199k", gia:"199.000 VNĐ", soi:"10.000 sồi" },
-        { id: 4, name: "Gói Hạt Sồi 299k", gia:"299.000 VNĐ", soi:"15.000 sồi" },
-        { id: 5, name: "Gói Hạt Sồi 399k", gia:"399.000 VNĐ", soi:"20.000 sồi" },
-        { id: 6, name: "Gói Hạt Sồi 499k", gia:"499.000 VNĐ", soi:"25.000 sồi" },
-      ]
-      };
-    },
-    methods: {
-      onOptionSelect(option){
-        this.selectedOption =option;
-
-      },
-      onThanhToanTextClick() {
-        this.$router.push("/Nap/Payment/Bill");
-      },
-      onGoiHatSoiSelect(giaTriGoi) {
-      this.selectedGoiHatSoi = giaTriGoi;
-      const selectedPackage = this.packages.find(packages => packages.name.includes(giaTriGoi));
-
-    // Cập nhật thông tin hiển thị tương ứng với gói hạt sồi đã chọn
-    this.selectedPackageInfo = {
-      tenGoiHatSoi: selectedPackage.name,
-      gia: selectedPackage.gia,
-      soi: selectedPackage.soi
-    };
-    },
-    toggleDropdown() { // Định nghĩa hàm để hiển thị/ẩn dropdown list
-      this.showDropdown = !this.showDropdown;
-    },
-    onPackageSelect(packages) {
-      console.log("Chọn gói Hạt Sồi", packages);
-      const selectedPackage = this.packages.find(pkg => pkg.name === packages);
-    
-    // Cập nhật thông tin của gói hạt sồi được chọn vào biến selectedPackageInfo
-    this.selectedPackageInfo = {
-      tenGoiHatSoi: selectedPackage.name,
-      gia: selectedPackage.gia,
-      soi: selectedPackage.soi
-    };
-      this.showDropdown = false;
-    }
-    },
+  const selectedOption = ref(null);
+  const selectedGoiHatSoi = ref(null);
+  const selectedPackageInfo = ref({
+    tenGoiHatSoi: "",
+    gia: "",
+    soi: ""
   });
-</script>
+  const showDropdown = ref(false);
+  const packages = ref([
+    { id: 1, name: "Gói Hạt Sồi 79k", gia: "79.000 VNĐ", soi: "4.000 sồi" },
+    { id: 2, name: "Gói Hạt Sồi 99k", gia: "99.000 VNĐ", soi: "5.000 sồi" },
+    { id: 3, name: "Gói Hạt Sồi 199k", gia: "199.000 VNĐ", soi: "10.000 sồi" },
+    { id: 4, name: "Gói Hạt Sồi 299k", gia: "299.000 VNĐ", soi: "15.000 sồi" },
+    { id: 5, name: "Gói Hạt Sồi 399k", gia: "399.000 VNĐ", soi: "20.000 sồi" },
+    { id: 6, name: "Gói Hạt Sồi 499k", gia: "499.000 VNĐ", soi: "25.000 sồi" },
+  ]);
+  
+  const onOptionSelect = (option) => {
+    selectedOption.value = option;
+  };
+  
+  const onThanhToanTextClick = () => {
+    const route = useRoute();
+    route.push("/Nap/Payment/Bill");
+  };
+  
+  const onGoiHatSoiSelect = (giaTriGoi) => {
+    selectedGoiHatSoi.value = giaTriGoi;
+    const selectedPackage = packages.value.find(pkg => pkg.name.includes(giaTriGoi));
+  
+    selectedPackageInfo.value = {
+      tenGoiHatSoi: selectedPackage.name,
+      gia: selectedPackage.gia,
+      soi: selectedPackage.soi
+    };
+  };
+  
+  const toggleDropdown = () => {
+    showDropdown.value = !showDropdown.value;
+  };
+  
+  const onPackageSelect = (pkgName) => {
+    const selectedPackage = packages.value.find(pkg => pkg.name === pkgName);
+    selectedPackageInfo.value = {
+      tenGoiHatSoi: selectedPackage.name,
+      gia: selectedPackage.gia,
+      soi: selectedPackage.soi
+    };
+    showDropdown.value = false;
+  };
+  </script>
 
 <style scoped>
 .dropdown-container {

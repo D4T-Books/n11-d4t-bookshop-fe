@@ -89,26 +89,23 @@
       </div>
     </div>
   </template>
-  <script>
-    import { defineComponent } from "vue";
-  
-    export default defineComponent({
-      name: "ShapeMaker",
-      props: {
-        rectangle13: { type: String },
-        giHtSi299k: { type: String },
-        prop: { type: String },
-        prop1: { type: String },
-        prop2: { type: String },
-        //onNpGiTextClick: { type: Function },
-      },
-      methods:{
-        onNpGiTextClick(){
-            this.$router.push("/Nap/Payment");
-        },
-      },
-    });
-  </script>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
+  rectangle13: String,
+  giHtSi299k: String,
+  prop: String,
+  prop1: String,
+  prop2: String,
+});
+
+const router = useRouter();
+
+const onNpGiTextClick = () => {
+  router.push("/Nap/Payment");
+};
+</script>
   <style scoped>
   /* Colors */
 .white {

@@ -1,6 +1,7 @@
 <template>
     <section
-      class="w-[1418px] flex flex-row items-start justify-end pt-0 px-[51px] pb-[19.9px] box-border max-w-full mq1350:pl-[25px] mq1350:pr-[25px] mq1350:box-border"
+    
+      class="w-[100%] flex flex-row items-start justify-end pt-0 px-[51px] pb-[19.9px] box-border max-w-full mq1350:pl-[25px] mq1350:pr-[25px] mq1350:box-border"
     >
       <form
         class="m-0 flex-1 flex flex-col items-start justify-start gap-[18px] max-w-full shrink-0"
@@ -29,7 +30,7 @@
             @click="onGroupContainerClick"
           >
             <div
-              class="absolute top-[7px] left-[0px] text-14xl font-segoe-ui text-green text-left inline-block w-full h-full mq800:text-5xl mq450:text-lg" style="white-space: nowrap;"
+              class="absolute top-[7px] left-[0px] text-14xl font-segoe-ui text-green text-left inline-block w-full h-full mq800:text-5xl mq450:text-lg" style="white-space: nowrap;left: 50%; transform: translateX(-50%);"
             >
               Tìm hiểu thêm.
             </div>
@@ -48,7 +49,7 @@
               class="h-[92px] w-[957px] relative rounded-xl bg-white box-border hidden max-w-full border-[1px] border-solid border-black"
             />
             <input
-              class="w-1000 [border:none] [outline:none] font-segoe-ui text-13xl bg-[transparent] h-[43px] relative text-black text-left flex items-center p-0 z-[1] mq800:text-7xl mq450:text-lgi"
+              class="w-full [border:none] [outline:none] font-segoe-ui text-13xl bg-[transparent] h-[43px] relative text-black text-left flex items-center p-0 z-[1] mq800:text-7xl mq450:text-lgi"
               placeholder="Nhập mã code"
               type="text"
             />
@@ -56,7 +57,7 @@
           <button
             class="cursor-pointer [border:none] pt-[18px] px-[45px] pb-6 bg-mediumgreen-100 rounded-31xl flex flex-row items-start justify-start whitespace-nowrap hover:bg-mediumgreen-200 mq450:pl-5 mq450:pr-5 mq450:box-border"
             @click="onGroupButtonClick"
-            style="margin-right: -65px;"
+            style="margin-left: 50px;"
           >
             <div
               class="h-[80px] w-[316px] relative rounded-31xl bg-mediumgreen-100 hidden"
@@ -69,10 +70,10 @@
       </form>
       <Toast />
     </section>
-    <div v-if="isNotificationVisible" class="notification">
+    <!-- <div v-if="isNotificationVisible" class="notification">
     Thông báo của bạn ở đây!
     <span @click="closeNotification" class="close-button brown">Đóng</span>
-  </div>
+  </div> -->
   
   </template>
  <!-- <script setup>
@@ -81,35 +82,30 @@ import showNotification from "../../utils/showNotification.js";
 const toast = useToast();
 showNotification(toast,"success","Thông báo",response.data.message);
 </script> -->
-    <script>
-    import { defineComponent } from "vue";
-    
-import { isNavigationFailure } from "vue-router";
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-export default defineComponent({
-  name: "Kinhhoat",
-  data(){
-    return{
-      isNotificationVisible: true
-    };
-  },
-  methods: {
-    onGroupContainerClick() {
-      this.$router.push("/Nap/Payment/tht");
-    },
-    onGroupButtonClick() {
-      this.isNotificationVisible = true;
-    // Tắt thông báo sau 10 giây
-    setTimeout(() => {
-      this.isNotificationVisible = true;
-    }, 10000);
-    },
-    closeNotification() {
-    this.isNotificationVisible = false;
-  }
-  },
-  });
+const isNotificationVisible = ref(true);
+const router = useRouter();
+
+const onGroupContainerClick = () => {
+  router.push("/Nap/Payment/Tim-hieu-them");
+};
+
+const onGroupButtonClick = () => {
+  isNotificationVisible.value = true;
+  // Tắt thông báo sau 10 giây
+  setTimeout(() => {
+    isNotificationVisible.value = false;
+  }, 10000);
+};
+
+const closeNotification = () => {
+  isNotificationVisible.value = false;
+};
 </script>
+
 <style scoped>
 
 .notification {
@@ -284,6 +280,5 @@ border-color: #d9d9d9;
   font-size: inherit;
 }
 
-/* Screens - no custom screen sizes defined */
 
 </style>
