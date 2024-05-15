@@ -74,23 +74,20 @@
     </div>
   </div>
 </template>
-<script>
-  import { defineComponent } from "vue";
+<script setup>
+import { useRouter } from 'vue-router';
 
-  export default defineComponent({
-    name: "Frame1",
-    props: {
-      giHtSi79k: { type: String },
-      prop: { type: String },
-      prop1: { type: String },
-      //onNpGiTextClick: { type: Function },
-    },
-    methods:{
-        onNpGiTextClick(){
-            this.$router.push("/Nap/Payment");
-        },
-      },
-  });
+const props = defineProps({
+  giHtSi79k: String,
+  prop: String,
+  prop1: String,
+});
+
+const router = useRouter();
+
+const onNpGiTextClick = () => {
+  router.push("/Nap/Payment");
+};
 </script>
 <style scoped>
   /* Colors */
