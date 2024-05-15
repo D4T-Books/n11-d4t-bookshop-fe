@@ -16,7 +16,7 @@
           <img
             class="h-[70px] w-[70px] relative object-cover z-[1]"
             alt=""
-            src="../../src/assets/imgs/bonussoi.png"
+            src="../../assets/imgs/bonussoi.png"
           />
         </div>
         <div
@@ -39,7 +39,7 @@
               <img
                 class="h-[25px] w-[50px] relative object-cover min-h-[25px] z-[2]"
                 alt=""
-                src="../../src/assets/imgs/bonussoi.png"
+                src="../../assets/imgs/bonussoi.png"
               />
             </div>
           </div>

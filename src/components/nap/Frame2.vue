@@ -1,8 +1,8 @@
 <script setup>
   import { useRouter } from "vue-router";
-
+  const router = useRouter();
   const onNpGiTextClick = () => {
-    const router = useRouter();
+    
     router.push("/Nap/Payment");
   };
 </script>
@@ -14,7 +14,7 @@
       <img
         class="w-[70px] h-[70px] absolute !m-[0] top-[40px] left-[calc(50%_-_35px)] object-cover z-[1]"
         alt=""
-        src="../../src/assets/imgs/bonussoi.png"
+        src="../../assets/imgs/bonussoi.png"
       />
       <div
         class="w-[calc(100%_+_1px)] h-px absolute !m-[0] right-[-1px] bottom-[179px] left-[0px] box-border z-[1] border-t-[1px] border-solid border-gainsboro-100"
@@ -54,7 +54,7 @@
                 <img
                   class="h-[25px] w-[50px] relative object-cover min-h-[25px] z-[2]"
                   alt=""
-                  src="../../src/assets/imgs/bonussoi.png"
+                  src="../../assets/imgs/bonussoi.png"
                 />
               </div>
             </div>

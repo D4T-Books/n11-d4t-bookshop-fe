@@ -1,8 +1,8 @@
 <script setup>
   import HeaderAfterLogin from "@/components/default/HeaderAfterLogin.vue";
   import FooterApp from "@/components/default/FooterApp.vue";
-   import Kinhhoat from "@/components/Kinhhoat.vue";
-   import Hinhthuc from "@/components/Hinhthuc.vue";
+   import Kinhhoat from "@/components/nap/Kinhhoat.vue";
+   import Hinhthuc from "@/components/nap/Hinhthuc.vue";
 //   import { useRouter } from "vue-router";
 
 // const router = useRouter();

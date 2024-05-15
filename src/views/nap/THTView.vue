@@ -32,7 +32,7 @@
           class="w-[600px] h-[250px] absolute !m-[0] top-[-230px] object-cover z-[4]"
           loading="lazy"
           alt=""
-          src="../../src/assets/imgs/THT.png"
+          src="../../assets/imgs/THT.png"
         />
         <ol class="m-0 font-inherit text-inherit">
           <li class="mb-0">
